@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     // this is a new comment
     // Andrew is Making a comment here
     // Cutler's comment
-    // the saminator's new comment
+    // the samuel's third new comment
     //Chicken never hurt me
-    // the samuel's second new comment
 }
