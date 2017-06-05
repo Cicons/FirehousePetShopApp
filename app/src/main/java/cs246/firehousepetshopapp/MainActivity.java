@@ -15,4 +15,5 @@ public class MainActivity extends AppCompatActivity {
     // Cutler's comment
     // the saminator's new comment
     //Chicken never hurt me
+    // the samuel's second new comment
 }
