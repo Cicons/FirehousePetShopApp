@@ -5,16 +5,19 @@ package cs246.firehousepetshopapp;
  */
 
 public class Customer extends User {
-    //private Points points;
+    private Points points;
     private String phone;
 
     public Customer() {
-    }
-    //public Points getPoints(){
-    // return points;
-    //}
-    public void setPoints(/*Points p*/){
 
+    public Points getPoints() {
+            return points;
+    }
+
+
+
+    public void setPoints(Points p){
+        points = p;
     }
 
     public String getPhone() {
