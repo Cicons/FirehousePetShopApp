@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         myRef.setValue("Hello, World!");
     }
 // Read from the database
-myRef.addValueEventListener(new ValueEventListener() {
+/*myRef.addValueEventListener(new ValueEventListener() {
    @Override
    public void onDataChange(DataSnapshot dataSnapshot) {
      // This method is called once with the initial value and again
@@ -33,5 +33,5 @@ myRef.addValueEventListener(new ValueEventListener() {
         // Failed to read value
         Log.w(TAG, "Failed to read value.", error.toException());
     }
-    });
+    });*/
 }
