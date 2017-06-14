@@ -13,6 +13,11 @@ public class User {
         password = null;
         email = null;
     }
+    public User(String n) {
+        userName = n;
+        password = null;
+        email = null;
+    }
 
     public String getUserName() {
         return userName;

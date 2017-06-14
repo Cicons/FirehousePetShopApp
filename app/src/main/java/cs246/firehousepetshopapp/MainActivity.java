@@ -12,11 +12,17 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private static final String TAG = "MyActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+        //Customer bob = new Customer("Bob"); // look up "cunstructor chain" for Customer
+
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
