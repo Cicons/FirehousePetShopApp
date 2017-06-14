@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Firehouse Pet Shop App</string>
+    <string name="add_reward">Add Reward</string>
+    <string name="edit_item_s">Edit Item(s)</string>
+    <string name="delete_item_s">Delete Item(s)</string>
+    <string name="adjust_points">Adjust Points</string>
+    <string name="administrator">Administrator</string>
+    <string name="manage_rewards">Manage Rewards</string>
+    <string name="view_help_requests">View Help Requests</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="submit">Submit</string>
+    <string name="username">UserName</string>
+    <string name="welcome">Welcome</string>
+    <string name="scan_qr">Scan QR</string>
+    <string name="add_attachment">Add Attachment</string>
+    <string name="subject">Subject</string>
+    <string name="select">Select</string>
+    <string name="add">Add</string>
+    <string name="subtract">Subtract</string>
+    <string name="points">Points</string>
+    <string name="delete">Delete</string>
 </resources>
