@@ -8,21 +8,22 @@ public class Customer extends User {
     private Points points;
     private String phone;
 
-    public Customer() {
+    public void setPoints(Points points) {
+        this.points = points;
+    }
 
     public Points getPoints() {
-            return points;
+        return points;
     }
 
 
-
-    public void setPoints(Points p){
-        points = p;
+    public Customer() {
     }
 
     public String getPhone() {
         return phone;
     }
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
