@@ -8,6 +8,18 @@ public class Customer extends User {
     private Points points;
     private String phone;
 
+    public Customer() {
+        super();
+        points = null;
+        phone = null;
+    }
+
+    public Customer(String n) {
+        super(n);
+        points = null;
+        phone = null;
+    }
+
     public void setPoints(Points points) {
         this.points = points;
     }
@@ -16,9 +28,6 @@ public class Customer extends User {
         return points;
     }
 
-
-    public Customer() {
-    }
 
     public String getPhone() {
         return phone;

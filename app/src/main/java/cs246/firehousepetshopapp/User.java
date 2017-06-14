@@ -5,14 +5,17 @@ package cs246.firehousepetshopapp;
  */
 
 public class User {
+
     private String userName;
     private String password;
     private String email;
+
     public User() {
         userName = null;
         password = null;
         email = null;
     }
+
     public User(String n) {
         userName = n;
         password = null;
@@ -36,7 +39,6 @@ public class User {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
