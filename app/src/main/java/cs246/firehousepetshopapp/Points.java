@@ -5,10 +5,25 @@ package cs246.firehousepetshopapp;
  */
 
 public class Points {
+
     private int value;
 
-    public int getValue() { return value; }
-    public void setValue(int v) { value = v; }
+    public Points() { this.value = 0; }
+    public Points(int value) { this.value = value; }
+
+    public int getPoints() { return value; }
+    public void setPoints(int v) { value = v; }
+
+    public void addPoints(int n){
+        value += n;
+    }
+    public void subtractPoints(int n) {
+        value -= n;
+
+        if (n < 0) {
+            n = 0;
+        }
+    }
 
 
 }

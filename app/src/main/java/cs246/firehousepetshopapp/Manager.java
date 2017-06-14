@@ -10,10 +10,10 @@ public class Manager extends User{
         super();
     }
 
-    public void addReward(/*Reward reward*/){
+    public void addReward(Reward reward){
 
     }
-    public void deleteReward(/*Reward reward*/){
+    public void deleteReward(Reward reward){
 
     }
     public void incUser(String name, int amount){
