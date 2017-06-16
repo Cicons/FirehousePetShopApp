@@ -9,6 +9,15 @@ public class User {
     private String userName;
     private String password;
     private String email;
+    private boolean isManager;
+
+    public boolean isManager() {
+        return isManager;
+    }
+
+    public void setManager(boolean manager) {
+        isManager = manager;
+    }
 
     public User() {
         userName = null;
