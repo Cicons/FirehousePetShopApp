@@ -14,6 +14,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static cs246.firehousepetshopapp.R.string.email;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -22,7 +24,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //
         super.onCreate(savedInstanceState);
+        //Luke's code
+        private FirebaseAuth mAuth;
+// ...
+        mAuth = FirebaseAuth.getInstance();
 
+        mAuth.createUserWithEmailAndPassword(email, password)
+        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "createUserWithEmail:success");
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    updateUI(user);
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                    Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
+                                                        Toast.LENGTH_SHORT).show();
+                    updateUI(null);
+                }
+
+                // ...
+            }
+        });
+        //end of Luke's code
         setContentView(R.layout.activity_main);
 
         // Practice setting up SharedPreferences with a fake Customer - this just follows the same
@@ -55,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        /*FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
 
         myRef.setValue("Hello, World!");
@@ -74,6 +101,6 @@ public class MainActivity extends AppCompatActivity {
     // Failed to read value
     Log.w(TAG, "Failed to read value.", error.toException());
         }
-        });
+        });*/
     }
 }
