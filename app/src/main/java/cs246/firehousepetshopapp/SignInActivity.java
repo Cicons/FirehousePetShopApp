@@ -20,6 +20,7 @@ import static cs246.firehousepetshopapp.R.string.email;
 
 public class SignInActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,26 +31,38 @@ public class SignInActivity extends AppCompatActivity {
 // ...
         mAuth = FirebaseAuth.getInstance();
         final String TAG = "Stuff";
-        mAuth.createUserWithEmailAndPassword(email, User.getPassword())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(EmailPasswordActivity.this, "Authentication failed.",
+        mAuth.signInWithEmailAndPassword(email, password)
+        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                 // Sign in success, update UI with the signed-in user's information
+                 Log.d(TAG, "signInWithEmail:success");
+                 FirebaseUser user = mAuth.getCurrentUser();
+                 //updateUI(user);
+                } else {
+                 // If sign in fails, display a message to the user.
+                     Log.w(TAG, "signInWithEmail:failure", task.getException());
+                    Toast.makeText(SignInActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
+                //updateUI(null);
+                }
 
-                        // ...
-                    }
-                });
+             // ...
+            }
+        });
         //end of Luke's code
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        final FirebaseAuth mAuth;
+// ...
+        mAuth = FirebaseAuth.getInstance();
+        final String TAG = "Stuff";
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //updateUI(currentUser);
+    }
+
 }
