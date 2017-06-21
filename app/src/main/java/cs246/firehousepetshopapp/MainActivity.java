@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         if (sharedPref.getString(key, bob.getUserName()) != null)
         {
-            // use Firebase to determine if the person is a manager or customer and then open their
-            //   specific main activity
+             //use Firebase to determine if the person is a manager or customer and then open their
+             //  specific main activity
         }
 
 
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Write a message to the database
-        /*FirebaseDatabase database = FirebaseDatabase.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
 
         myRef.setValue("Hello, World!");
@@ -83,6 +83,6 @@ public class MainActivity extends AppCompatActivity {
     // Failed to read value
     Log.w(TAG, "Failed to read value.", error.toException());
         }
-        });*/
+        });
     }
 }
