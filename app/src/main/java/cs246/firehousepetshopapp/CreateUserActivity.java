@@ -20,7 +20,7 @@ public class CreateUserActivity extends AppCompatActivity {
     }
     private void writeNewUser(String userId, String name, String email) {
     User user = new User(name, email);
-        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference()
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
         mDatabase.child("users").child(userId).setValue(user);
     }
