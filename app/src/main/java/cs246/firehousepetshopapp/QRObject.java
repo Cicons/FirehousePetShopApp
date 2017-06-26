@@ -1,3 +1,5 @@
+package cs246.firehousepetshopapp;
+
 /**
  * Created by sam on 6/26/2017.
  */
@@ -17,6 +19,7 @@ public class QRObject {
         this.value = 0;
         this.posValue = false;
     }
+
     //getters and setters for QR codes
 
     public int getValue() {
