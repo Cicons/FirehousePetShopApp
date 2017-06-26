@@ -21,12 +21,12 @@ public class PointsGreaterThanZeroTest {
     public void getValue_isCorrect() throws Exception {
         Points p = new Points(5);
 
-        assertEquals(p.getValue(), 5);
+        assertEquals(p.getPoints(), 5);
     }
 
     public void _isCorrect() throws Exception {
         Points p = new Points(3);
 
-        assertTrue(p.getValue() >= 0);
+        assertTrue(p.getPoints() >= 0);
     }
 }

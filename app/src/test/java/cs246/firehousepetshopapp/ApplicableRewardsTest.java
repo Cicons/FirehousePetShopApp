@@ -13,12 +13,12 @@ public class ApplicableRewardsTest {
     @Test
     public void addition_isCorrect() throws Exception {
         Customer c = new Customer();
-        c.setPoints(0);
-        c.addPoints(100);
+        //c.points.setPoints(0);
+        c.setPoints(100,true);
 
         Reward r = new Reward();
-        r.setPoints(35);
+        r.setCost(35);
 
-        assertTrue(c.getPoints() >= r.getPoints());
+        assertTrue(c.getPoints() >= r.getCost());
     }
 }
