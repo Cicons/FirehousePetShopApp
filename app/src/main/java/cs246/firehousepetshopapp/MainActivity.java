@@ -1,6 +1,7 @@
 package cs246.firehousepetshopapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -53,8 +54,23 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         if (sharedPref.getString(key, bob.getUserName()) != null)
         {
-             //use Firebase to determine if the person is a manager or customer and then open their
-             //  specific main activity
+             //use Firebase to determine if the person is a manager or customer
+
+            // and then open their specific main activity
+            if() {
+                Intent openCustomerMainIntent = new Intent(this, CustomerMainActivity.class);
+                startActivity(openCustomerMainIntent);
+            }
+            else if() {
+                Intent openManagerMainIntent = new Intent(this, ManagerMainActivity.class);
+                startActivity(openManagerMainIntent);
+            }
+
+        }
+        else
+        {
+            Intent openSignInIntent = new Intent(this, SignInActivity.class);
+            startActivity(openSignInIntent);
         }
 
 
