@@ -7,7 +7,7 @@ package cs246.firehousepetshopapp;
 public class Reward {
     private String title;
     private String description;
-    private String cost;
+    private int cost;
     // QRobject...
 
 
@@ -27,12 +27,12 @@ public class Reward {
         this.description = description;
     }
 
-    public String getCost() {
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(String cost) {
-        this.cost = cost;
+    public void setCost(int c) {
+        this.cost = c;
     }
 
     public Reward() {
