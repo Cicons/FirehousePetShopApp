@@ -10,22 +10,31 @@ public class Customer extends User {
 
     public Customer() {
         super();
-        points = null;
+        points = new Points();
         phone = null;
+        this.setManager(false);
     }
 
     public Customer(String n) {
         super(n);
-        points = null;
+        points = new Points();
         phone = null;
+        this.setManager(false);
     }
 
-    public void setPoints(Points points) {
-        this.points = points;
+    //public void setPoints(int p){}
+
+    public void setPoints(int p, boolean posValue) {
+        if(posValue){
+            points.addPoints(p);
+        }
+        else if(posValue == false){
+            points.subtractPoints(p);
+        }
     }
 
-    public Points getPoints() {
-        return points;
+    public int getPoints() {
+        return points.getPoints();
     }
 
 

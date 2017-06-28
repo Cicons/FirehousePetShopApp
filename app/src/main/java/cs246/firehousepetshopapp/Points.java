@@ -12,16 +12,22 @@ public class Points {
     public Points(int value) { this.value = value; }
 
     public int getPoints() { return value; }
+
     public void setPoints(int v) { value = v; }
 
     public void addPoints(int n){
         value += n;
     }
-    public void subtractPoints(int n) {
-        value -= n;
 
-        if (n < 0) {
-            n = 0;
+    public void subtractPoints(int n) {
+        if ((value - n) < 0) {
+            value = 0;
+        }
+        else if((value - n) > value) {
+            value = 0;
+        }
+        else {
+            value -= n;
         }
     }
 

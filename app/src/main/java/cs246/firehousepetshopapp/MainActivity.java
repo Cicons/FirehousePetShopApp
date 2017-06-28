@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MyActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
@@ -40,13 +41,13 @@ public class MainActivity extends AppCompatActivity {
 
         // SharedPreferences saved at end of SignInActivity, need a static "key" and "value", I think
         String key = "Bob";
-        Customer c = new Customer(key);
+        Customer bob = new Customer(key);
         final Context context = this;
 
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor prefEditor = pref.edit();
         prefEditor.apply();
-        prefEditor.putString(key, c.getUserName());
+        prefEditor.putString(key, bob.getUserName());
         prefEditor.commit();
 
         // THIS will determine if there is a Username already saved and will then bring up the
@@ -60,18 +61,18 @@ public class MainActivity extends AppCompatActivity {
 
                     SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE);
 
-                    if (sharedPref.getString(key, c.getUserName()) != null)
+                    if (sharedPref.getString(key, bob.getUserName()) != null)
                     {
                         //use Firebase to determine if the person is a manager or customer
 
                         // and then open their specific main activity
-                        if() { // bob is a customer
-                            Intent openCustomerMainIntent = new Intent(context, CustomerMainActivity.class);
+                        if(!(bob.isManager())) {
+                            Intent openCustomerMainIntent = new Intent(this, CustomerMainActivity.class);
                             startActivity(openCustomerMainIntent);
                             finish();
                         }
-                        else if() { // bob is a manager
-                            Intent openManagerMainIntent = new Intent(context, ManagerMainActivity.class);
+                        else if(bob.isManager()) {
+                            Intent openManagerMainIntent = new Intent(this, ManagerMainActivity.class);
                             startActivity(openManagerMainIntent);
                             finish();
                         }

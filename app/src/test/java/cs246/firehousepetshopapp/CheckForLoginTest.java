@@ -13,10 +13,10 @@ import static org.junit.Assert.assertEquals;
 public class CheckForLoginTest {
     @Test
     public void userName_isOnFile() throws Exception {
-        Customer c = new Custormer();
+        Customer c = new Customer();
         c.setUserName("Bob");
 
         assertEquals(c.getUserName(), "Bob");
-        assertTrue(c.getUserName() != NULL);
+        //assertTrue((c.getUserName()) != NULL);
     }
 }
