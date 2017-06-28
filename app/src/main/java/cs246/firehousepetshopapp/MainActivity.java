@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         // Practice setting up SharedPreferences with a fake Customer - this just follows the same
         //   code as in our reading quiz. I have no idea if it works.
         // THIS SHOULD BE USED in onDestroy() for the sign in activity
+
+        // BOB is just a test valiue and should be removed and replaced eventually
         Customer bob = new Customer("Bob"); // look up "constructor chain" for Customer
         String key = "Customer Username";
         Context context = this; // you CAN just put "this" inside the parentheses in the line below,
@@ -57,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
              //use Firebase to determine if the person is a manager or customer
 
             // and then open their specific main activity
-            if() {
+            if(!(bob.isManager())) {
                 Intent openCustomerMainIntent = new Intent(this, CustomerMainActivity.class);
                 startActivity(openCustomerMainIntent);
             }
-            else if() {
+            else if(bob.isManager()) {
                 Intent openManagerMainIntent = new Intent(this, ManagerMainActivity.class);
                 startActivity(openManagerMainIntent);
             }

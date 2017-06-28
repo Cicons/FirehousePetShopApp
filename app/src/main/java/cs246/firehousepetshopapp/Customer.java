@@ -10,17 +10,19 @@ public class Customer extends User {
 
     public Customer() {
         super();
-        points = null;
+        points = new Points();
         phone = null;
         this.setManager(false);
     }
 
     public Customer(String n) {
         super(n);
-        points = null;
+        points = new Points();
         phone = null;
         this.setManager(false);
     }
+
+    //public void setPoints(int p){}
 
     public void setPoints(int p, boolean posValue) {
         if(posValue){
@@ -31,8 +33,8 @@ public class Customer extends User {
         }
     }
 
-    public Points getPoints() {
-        return points;
+    public int getPoints() {
+        return points.getPoints();
     }
 
 
