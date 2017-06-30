@@ -50,5 +50,5 @@ public class QRObject {
         if(bm != null) {
             image_view.setImageBitmap(bm);
         }
-    } catch (WriterException e) { //eek }
+    } catch (WriterException e) { /*e.getStackTrace();*/ }
 }
