@@ -52,27 +52,26 @@ public class MainActivity extends AppCompatActivity {
 
         // THIS will determine if there is a Username already saved and will then bring up the
         //   screen for sign in or the specific user's main activity.
-        Thread myThread = new Thread(){
+        final Thread myThread = new Thread() {
             @Override
-            public void run(){
+            public void run() {
                 try{
                     sleep(3000);
 
 
-                    SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE);
+                    SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE));
 
-                    if (sharedPref.getString(key, bob.getUserName()) != null)
-                    {
+                    if (sharedPref.getString(key, bob.getUserName()) != null) {
                         //use Firebase to determine if the person is a manager or customer
 
                         // and then open their specific main activity
                         if(!(bob.isManager())) {
-                            Intent openCustomerMainIntent = new Intent(this, CustomerMainActivity.class);
+                            Intent openCustomerMainIntent = new Intent(context, CustomerMainActivity.class);
                             startActivity(openCustomerMainIntent);
                             finish();
                         }
                         else if(bob.isManager()) {
-                            Intent openManagerMainIntent = new Intent(this, ManagerMainActivity.class);
+                            Intent openManagerMainIntent = new Intent(context, ManagerMainActivity.class);
                             startActivity(openManagerMainIntent);
                             finish();
                         }
@@ -113,12 +112,14 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         };
 
+        myThread.start();
 
     }
 }

@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/FireHouse_Pet_Shop_SplashScreen_2"
+        android:src="@drawable/firehouse_pet_shop_splashscreen"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="32dp"
         android:layout_marginLeft="32dp"

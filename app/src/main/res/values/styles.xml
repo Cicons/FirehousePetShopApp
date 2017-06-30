@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="splashScreenTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/FireHouse_Pet_Shop_SplashScreen_2</item>
+        <item name="android:windowBackground">@drawable/firehouse_pet_shop_splashscreen</item>
     </style>
 
 </resources>
