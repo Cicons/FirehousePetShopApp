@@ -31,6 +31,7 @@ public class SignInActivity extends AppCompatActivity {
 // ...
         mAuth = FirebaseAuth.getInstance();
         final String TAG = "Stuff";
+
         mAuth.signInWithEmailAndPassword(email, password)
         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
