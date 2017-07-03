@@ -34,7 +34,7 @@ public class CreateUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
 
-        mButton = (Button) findViewById(R.id.button3);
+        mButton = (Button) findViewById(R.id.button5);
         final Context contextCreateUser = this;
 
         mButton.setOnClickListener(new View.OnClickListener() {
