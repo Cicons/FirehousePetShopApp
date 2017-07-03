@@ -1,5 +1,7 @@
 package cs246.firehousepetshopapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +27,7 @@ import static cs246.firehousepetshopapp.R.string.email;
 public class SignInActivity extends AppCompatActivity {
 
     private static final String TAG = "SignInActivity";
+    Context contextSignIn = this;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -68,6 +71,8 @@ public class SignInActivity extends AppCompatActivity {
                 String password = _password.getText().toString();
                 if (!email.equals("") && !password.equals("")) {
                     mAuth.signInWithEmailAndPassword(email, password);
+                    Intent openCustomerMainIntent = new Intent(contextSignIn, CustomerMainActivity.class);
+                    startActivity(openCustomerMainIntent);
                 }
                 else{
                     popMessage("Missing email, password, or both.");

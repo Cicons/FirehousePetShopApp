@@ -22,6 +22,7 @@
     <string name="points">Points</string>
     <string name="delete">Delete</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="action_create_help_request">Create Help Request</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -32,7 +33,9 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
+    <string name="permission_rationale">Contacts permissions are needed for providing email
+        completions.
     </string>
+    <string name="action_sign_out">Sign Out</string>
+
 </resources>

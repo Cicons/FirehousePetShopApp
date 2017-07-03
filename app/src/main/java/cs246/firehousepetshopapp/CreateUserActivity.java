@@ -1,5 +1,7 @@
 package cs246.firehousepetshopapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -14,8 +16,6 @@ import com.google.firebase.database.FirebaseDatabase;
 /**
  * Created by cutlerhollist on 6/10/17.
  */
-
-
 
 
 /** Called when the activity is first created. */
@@ -33,15 +33,25 @@ public class CreateUserActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
+
         mButton = (Button) findViewById(R.id.button3);
+        final Context contextCreateUser = this;
 
         mButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 username = (EditText) findViewById(R.id.editText3);
                 password = (EditText) findViewById(R.id.editText4);
                 email = (EditText) findViewById(R.id.editText5);
+
+                // create the user
+                writeNewUser(password.getText().toString(), username.getText().toString(), email.getText().toString());
+
+                // take us to the Customer activity
+                Intent openCustomerMainIntent = new Intent(contextCreateUser, CustomerMainActivity.class);
+                startActivity(openCustomerMainIntent);
             }
         });
+
     }
 
     private void writeNewUser(String userId, String name, String email) {

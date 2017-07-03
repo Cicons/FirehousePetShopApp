@@ -40,15 +40,15 @@ public class MainActivity extends AppCompatActivity {
         // THIS SHOULD BE USED in onDestroy() for the sign in activity
 
         // SharedPreferences saved at end of SignInActivity, need a static "key" and "value", I think
-        String key = "Bob";
-        Customer bob = new Customer(key);
-        final Context context = this;
-
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor prefEditor = pref.edit();
-        prefEditor.apply();
-        prefEditor.putString(key, bob.getUserName());
-        prefEditor.commit();
+//        String key = "Bob";
+//        Customer bob = new Customer(key);
+//        final Context context = this;
+//
+//        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+//        SharedPreferences.Editor prefEditor = pref.edit();
+//        prefEditor.apply();
+//        prefEditor.putString(key, bob.getUserName());
+//        prefEditor.commit();
 
         // THIS will determine if there is a Username already saved and will then bring up the
         //   screen for sign in or the specific user's main activity.
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     sleep(3000);
 
 
-                    SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE));
+                    //SharedPreferences sharedPref = context.getPreferences(Context.MODE_PRIVATE));
 
                     if (sharedPref.getString(key, bob.getUserName()) != null) {
                         //use Firebase to determine if the person is a manager or customer
