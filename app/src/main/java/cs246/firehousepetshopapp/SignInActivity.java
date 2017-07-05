@@ -79,6 +79,13 @@ public class SignInActivity extends AppCompatActivity {
                 }
             }
         });
+        btnCreateAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent openCreateUserActivity = new Intent(contextSignIn, CreateUserActivity.class);
+                startActivity(openCreateUserActivity);
+            }
+            });
     }
 
     @Override
