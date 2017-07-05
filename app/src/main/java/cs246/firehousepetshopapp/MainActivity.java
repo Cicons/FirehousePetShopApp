@@ -26,7 +26,7 @@ import static cs246.firehousepetshopapp.R.string.email;
 
 public class MainActivity extends AppCompatActivity {
 
-
+/*
     private static final String TAG = "MyActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                     *  we can test the above code and finish the activity, then move to the next
                     *  activity and try sending something up in that one.*/
 
+
+    /*
                     // Write a message to the database
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference("message");
@@ -122,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         myThread.start();
 
     }
+    */
 }
 
 
