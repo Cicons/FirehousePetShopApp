@@ -45,6 +45,7 @@ public class SignInActivity extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.login);
         btnCreateAccount = (Button) findViewById(R.id.create);
 
+
         mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -79,13 +80,13 @@ public class SignInActivity extends AppCompatActivity {
                 }
             }
         });
-        /*btnCreateAccount.setOnClickListener(new View.OnClickListener() {
+        btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent openCreateUserActivity = new Intent(contextSignIn, CreateUserActivity.class);
                 startActivity(openCreateUserActivity);
             }
-            });*/
+            });
     }
     //Test of button switching activity
     public void createNewUser(View view) {
