@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CreateUserActivity extends AppCompatActivity {
 
-    Button mButton;
+    Button btnSubmit;
     EditText username;
     EditText password;
     EditText email;
@@ -34,10 +34,10 @@ public class CreateUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
 
-        mButton = (Button) findViewById(R.id.button4);
+        btnSubmit = (Button) findViewById(R.id.submit);
         final Context contextCreateUser = this;
 
-        mButton.setOnClickListener(new View.OnClickListener() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 username = (EditText) findViewById(R.id.editText3);
                 password = (EditText) findViewById(R.id.editText4);
