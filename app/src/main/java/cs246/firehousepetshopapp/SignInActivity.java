@@ -45,6 +45,7 @@ public class SignInActivity extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.login);
         btnCreateAccount = (Button) findViewById(R.id.create);
 
+
         mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -86,6 +87,11 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(openCreateUserActivity);
             }
             });
+    }
+    //Test of button switching activity
+    public void createNewUser(View view) {
+        Intent intent = new Intent(this, CreateUserActivity.class);
+        startActivity(intent);
     }
 
     @Override
