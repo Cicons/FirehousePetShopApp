@@ -86,7 +86,7 @@ public class SignInActivity extends AppCompatActivity {
                 }*/
             }
         });
-        //This is the New BUTTON
+        //I hate pineapple
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
