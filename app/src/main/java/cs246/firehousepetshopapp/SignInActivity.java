@@ -68,12 +68,18 @@ public class SignInActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //String email = _email.getText().toString();
+                //String password = _password.getText().toString();
+                //if (!email.equals("") && !password.equals("")) {
+                    //mAuth.signInWithEmailAndPassword(email, password);
                /* String email = _email.getText().toString();
                 String password = _password.getText().toString();
                 if (!email.equals("") && !password.equals("")) {
                     mAuth.signInWithEmailAndPassword(email, password); */
                     Intent openCustomerMainIntent = new Intent(contextSignIn, CustomerMainActivity.class);
                     startActivity(openCustomerMainIntent);
+                //}
+                /*else{
                /* }
                 else{
                     popMessage("Missing email, password, or both.");
