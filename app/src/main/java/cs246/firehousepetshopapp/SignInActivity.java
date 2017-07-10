@@ -86,6 +86,7 @@ public class SignInActivity extends AppCompatActivity {
                 }*/
             }
         });
+        //This is the New BUTTON
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
