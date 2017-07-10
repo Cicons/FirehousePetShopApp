@@ -70,7 +70,6 @@ public class CustomerMainActivity extends AppCompatActivity {
         ListView mainListView = (ListView) findViewById(R.id.expandableListView2);
         mainListView.setAdapter(adapter1);
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_main);
 
