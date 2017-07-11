@@ -68,22 +68,35 @@ public class SignInActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //String email = _email.getText().toString();
-                //String password = _password.getText().toString();
-                //if (!email.equals("") && !password.equals("")) {
-                    //mAuth.signInWithEmailAndPassword(email, password);
-               /* String email = _email.getText().toString();
+
+               String email = _email.getText().toString();
                 String password = _password.getText().toString();
                 if (!email.equals("") && !password.equals("")) {
-                    mAuth.signInWithEmailAndPassword(email, password); */
-                    Intent openCustomerMainIntent = new Intent(contextSignIn, CustomerMainActivity.class);
-                    startActivity(openCustomerMainIntent);
-                //}
-                /*else{
-               /* }
+                    mAuth.signInWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(SignInActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Log.d(TAG, "signInWithEmail:success");
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        Intent openCustomerMainActivity = new Intent(contextSignIn, QrCodeScannerActivity.class);
+                                        startActivity(openCustomerMainActivity);
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                        Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
+
+                                    // ...
+                                }
+                            });
+
+                }
                 else{
                     popMessage("Missing email, password, or both.");
-                }*/
+                }
             }
         });
         //I hate pineapple

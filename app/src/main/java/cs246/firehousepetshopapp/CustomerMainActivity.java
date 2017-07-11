@@ -31,7 +31,22 @@ public class CustomerMainActivity extends AppCompatActivity {
         // call for array of rewards from firebase
         // Convert array of Rewards to array of Strings
 
-        Reward[] rewArray = {};
+        Reward rew1 = new Reward();
+        rew1.setCost(0);
+        rew1.setDescription("A basic description for reward 1");
+        rew1.setTitle("Reward 1");
+
+        Reward rew2 = new Reward();
+        rew2.setCost(42);
+        rew2.setDescription("A basic description for reward 2");
+        rew2.setTitle("Reward 2");
+
+        Reward rew3 = new Reward();
+        rew3.setCost(100);
+        rew3.setDescription("A description for reward 3");
+        rew3.setTitle("Reward 3");
+
+        Reward[] rewArray = {rew1, rew2, rew3};
 
         ArrayList<String> rewList = new ArrayList<String>();
 
@@ -55,15 +70,14 @@ public class CustomerMainActivity extends AppCompatActivity {
         ListView mainListView = (ListView) findViewById(R.id.expandableListView2);
         mainListView.setAdapter(adapter1);
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_main);
-
+/*
         mScanQR = (Button) findViewById(R.id.button6);
         //mDropDown = (Spinner) findViewById(R.id.spinner);
         expListView = (ExpandableListView) findViewById(R.id.expandableListView2);
         final Context contextCustomerMain = this;
-
+*/
         mScanQR.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
