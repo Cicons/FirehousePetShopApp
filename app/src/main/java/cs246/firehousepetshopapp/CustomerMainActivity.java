@@ -72,12 +72,12 @@ public class CustomerMainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_main);
-
+/*
         mScanQR = (Button) findViewById(R.id.button6);
         //mDropDown = (Spinner) findViewById(R.id.spinner);
         expListView = (ExpandableListView) findViewById(R.id.expandableListView2);
         final Context contextCustomerMain = this;
-
+*/
         mScanQR.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 

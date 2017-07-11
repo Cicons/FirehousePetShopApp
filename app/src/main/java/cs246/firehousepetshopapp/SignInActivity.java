@@ -80,7 +80,7 @@ public class SignInActivity extends AppCompatActivity {
                                         // Sign in success, update UI with the signed-in user's information
                                         Log.d(TAG, "signInWithEmail:success");
                                         FirebaseUser user = mAuth.getCurrentUser();
-                                        Intent openCustomerMainActivity = new Intent(contextSignIn, CreateUserActivity.class);
+                                        Intent openCustomerMainActivity = new Intent(contextSignIn, QrCodeScannerActivity.class);
                                         startActivity(openCustomerMainActivity);
                                     } else {
                                         // If sign in fails, display a message to the user.
