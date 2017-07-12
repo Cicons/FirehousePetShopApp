@@ -33,5 +33,23 @@ public class CustomerMainActivity extends AppCompatActivity {
                 startActivity(openQrCodeScannerIntent);
             }
         });
+        
+        // connect UserName and Points to Firebase
+        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        // I have no idea how to write to the app from Firebase :)
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                userNameTextView.setText("A User");
+                pointsTextView.setText("Some Points");
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                userNameTextView.setText("ERROR");
+                pointsTextView.setText("ERROR");
+            }
+        });
     }
 }
