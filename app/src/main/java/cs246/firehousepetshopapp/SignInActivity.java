@@ -55,11 +55,9 @@ public class SignInActivity extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    popMessage("Successfully signed in with: " + user.getEmail());
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
-                    popMessage("Successfully signed out.");
                 }
                 // ...
             }
@@ -80,7 +78,7 @@ public class SignInActivity extends AppCompatActivity {
                                         // Sign in success, update UI with the signed-in user's information
                                         Log.d(TAG, "signInWithEmail:success");
                                         FirebaseUser user = mAuth.getCurrentUser();
-                                        Intent openCustomerMainActivity = new Intent(contextSignIn, QrCodeScannerActivity.class);
+                                        Intent openCustomerMainActivity = new Intent(contextSignIn, CustomerMainActivity.class);
                                         startActivity(openCustomerMainActivity);
                                     } else {
                                         // If sign in fails, display a message to the user.
