@@ -1,14 +1,17 @@
 package cs246.firehousepetshopapp;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import java.util.ArrayList;
 
 public class CustomerMainActivity extends AppCompatActivity {
-    @Override    protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_main);
         String[] items1 = {"Item 1", "Item 2", "Item 3"};
@@ -25,8 +28,8 @@ public class CustomerMainActivity extends AppCompatActivity {
                   theListView.setAdapter(adapter1);
         
         final Context contextOpenQRScanner = this;
-        final Button button = (Button) findViewById(R.id.enterButton);
-        button.setOnClickListener(new View.OnClickListener() {
+        myButton = (Button) findViewById(R.id.enterButton);
+        myButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // take us to the QrCodeScanner activity
                 Intent openQrCodeScannerIntent = new Intent(contextOpenQRScanner, QrCodeScannerActivity.class);

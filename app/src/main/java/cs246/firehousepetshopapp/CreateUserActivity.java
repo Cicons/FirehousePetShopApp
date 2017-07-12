@@ -84,8 +84,8 @@ public class CreateUserActivity extends AppCompatActivity {
                 }
                 });
                 // take us to the Customer activity
-                //Intent openCustomerMainIntent = new Intent(contextCreateUser, CustomerMainActivity.class);
-                //startActivity(openCustomerMainIntent);
+                Intent openCustomerMainIntent = new Intent(contextCreateUser, SignInActivity.class);
+                startActivity(openCustomerMainIntent);
             }
         });
 
