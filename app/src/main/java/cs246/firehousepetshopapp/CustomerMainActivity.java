@@ -19,8 +19,19 @@ public class CustomerMainActivity extends AppCompatActivity {
                 combItems.add(items1[i] + ": " + items2[c]);
             }
         }
-    ArrayAdapter adapter1 = new ArrayAdapter<String>(
+        ArrayAdapter adapter1 = new ArrayAdapter<String>(
             this, android.R.layout.simple_list_item_1, items1);
                  ListView theListView = (ListView) findViewById(R.id.mainListView);
                   theListView.setAdapter(adapter1);
-               }}
+        
+        final Context contextOpenQRScanner = this;
+        final Button button = (Button) findViewById(R.id.enterButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // take us to the QrCodeScanner activity
+                Intent openQrCodeScannerIntent = new Intent(contextOpenQRScanner, QrCodeScannerActivity.class);
+                startActivity(openQrCodeScannerIntent);
+            }
+        });
+    }
+}
