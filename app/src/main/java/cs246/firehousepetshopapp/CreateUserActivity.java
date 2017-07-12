@@ -35,14 +35,14 @@ public class CreateUserActivity extends AppCompatActivity {
     EditText email;
     //read text in and convert to string
 
-    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth Auth;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        Auth = FirebaseAuth.getInstance();
         btnSubmit = (Button) findViewById(R.id.submit);
         final Context contextCreateUser = this;
 
@@ -55,15 +55,15 @@ public class CreateUserActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(email.getText().toString())){
                     Toast.makeText(CreateUserActivity.this,"Empty email",Toast.LENGTH_LONG).show();
                 return;
-            }
+                }
 
-            if(TextUtils.isEmpty(password.getText().toString().trim())){
-                Toast.makeText(CreateUserActivity.this,"Empty password",Toast.LENGTH_LONG).show();
-                return;
-            }
+                if(TextUtils.isEmpty(password.getText().toString().trim())){
+                    Toast.makeText(CreateUserActivity.this,"Empty password",Toast.LENGTH_LONG).show();
+                    return;
+                }
                 // create the user
                 //writeNewUser(password.getText().toString(), username.getText().toString(), email.getText().toString());
-                firebaseAuth.createUserWithEmailAndPassword(email.getText().toString().trim(), password.getText().toString().trim())
+                Auth.createUserWithEmailAndPassword(email.getText().toString().trim(), password.getText().toString().trim())
                 .addOnCompleteListener(CreateUserActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(Task<AuthResult> task) {
@@ -84,8 +84,8 @@ public class CreateUserActivity extends AppCompatActivity {
                 }
                 });
                 // take us to the Customer activity
-                //Intent openCustomerMainIntent = new Intent(contextCreateUser, CustomerMainActivity.class);
-                //startActivity(openCustomerMainIntent);
+                Intent openCustomerMainIntent = new Intent(contextCreateUser, SignInActivity.class);
+                startActivity(openCustomerMainIntent);
             }
         });
 
